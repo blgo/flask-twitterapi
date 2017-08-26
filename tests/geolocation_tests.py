@@ -17,5 +17,3 @@ def test_find_coordinates():
 
     gmarkers = GoogleMapsMarkers()
     gmarkers.find_coordinates(twitts.statuses, countries)
-
-    assert_equal(gmarkers.markers[0].get('infobox'), "898113231914401793")
