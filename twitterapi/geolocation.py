@@ -17,9 +17,13 @@ class GoogleMapsMarkers(object):
         Decides what metadata from the twitt will be displayed in the map
         '''
         if twitt.urls:
-            return twitt.urls[0].url
+            return ''.join(["<p><a href=\"", twitt.urls[0].url,
+                            "\">See article</a></p><p><a href=\"https://twitter.com/",
+                            twitt.user.screen_name, "/status/", twitt.id_str,
+                            "\">See twitt online</a></p>"])
         else:
-            return twitt.id_str
+            return ''.join(["<p><a href=\"https://twitter.com/", twitt.user.screen_name,
+                            "/status/", twitt.id_str, "\">See twitt online</a></p>"])
 
     def check_hashtags(self, twitt, country):
         for hashtag in twitt.hashtags:
