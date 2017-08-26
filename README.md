@@ -4,8 +4,8 @@
 
 ## Build docker image
 
-`docker build . -t blgo/lpthw-docker:latest`
+`docker build . -t flask-twitterapi:latest`
 
 ## Run image from Docker hub
 
-`docker run --rm -p 80:80 blgo/lpthw-docker:latest`
+`docker run --rm -p 80:80 flask-twitterapi:latest`
