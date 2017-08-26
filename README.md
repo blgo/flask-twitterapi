@@ -1,6 +1,6 @@
 # flask-twitterapi
 
-Simple Flask web app, which integrates a search string for geolocalization and display twitts in GoogleMaps
+Simple Flask web app, which integrates a search string for geolocalization and display twitts on top of GoogleMaps.
 
 ## Setup
 
@@ -22,10 +22,10 @@ Simple Flask web app, which integrates a search string for geolocalization and d
 
 ## Docker image
 
-### Build docker image
+### Build Docker image
 
 `docker build . -t flask-twitterapi:latest`
 
-### Run image from Docker hub
+### Run Docker image
 
 `docker run --rm -p 80:80 flask-twitterapi:latest`
