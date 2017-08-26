@@ -29,18 +29,23 @@ def index():
 
 
     countries = load_countries()
-    gmmarkers = GoogleMapsMarkers()
-    gmmarkers.find_coordinates(twitts.statuses, countries)
-
-
+    try:
+        gmmarkers = GoogleMapsMarkers()
+        gmmarkers.find_coordinates(twitts.statuses, countries)
+    except Exception as error:
+        return render_template("error.html", error=str(error))
     # creating a map in the view
-    sndmap = Map(
-        identifier="sndmap",
-        lat=37.4419,
-        lng=-122.1419,
-        fit_markers_to_bounds = True,
-        markers=gmmarkers.markers
-    )
+    try:
+        sndmap = Map(
+            identifier="sndmap",
+            lat=gmmarkers.markers[0].get('lat'),
+            lng=gmmarkers.markers[0].get('lng'),
+            style="height:300px;width:90%;margin:0;",
+            zoom=3,
+            markers=gmmarkers.markers
+        )
+    except Exception as error:
+        return render_template("error.html", error=str(error))
     return render_template("index.html", twitts=twitts, sndmap=sndmap)
 
 
