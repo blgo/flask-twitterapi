@@ -3,15 +3,15 @@
 
     <h1> Tweett collecting and visualisation app </h1>
 
+    <p>{{ sndmap.html }}</p>
+
     {% for status in twitts.statuses %}
          <p>{{ status.text }}</p>
     {% endfor %}
 
-    {{ sndmap.html }}
-
     <p>
         <form action="/" method="POST">
-            <input name="action" value="Continue" type="SUBMIT">
+            <input name="action" value="Refresh" type="SUBMIT">
         </form>
     </p>
 
