@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for status in twitts.statuses %}
+         <p>{{ status.text }}</p>
+    {% endfor %}
+    <p>
+    <form action="/" method="POST">
+    <input name="action" value="Continue" type="SUBMIT">
+    </form>
+    </p>
+{% endblock %}
