@@ -1,11 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
+
+    <h1> Tweett collecting and visualisation app </h1>
+
     {% for status in twitts.statuses %}
          <p>{{ status.text }}</p>
     {% endfor %}
+
+    {{ sndmap.html }}
+
     <p>
-    <form action="/" method="POST">
-    <input name="action" value="Continue" type="SUBMIT">
-    </form>
+        <form action="/" method="POST">
+            <input name="action" value="Continue" type="SUBMIT">
+        </form>
     </p>
+
 {% endblock %}
