@@ -6,7 +6,12 @@
     <p>{{ sndmap.html }}</p>
 
     {% for status in twitts.statuses %}
-         <p>{{ status.text }}</p>
+         <p>
+            {{ status.text }}
+            {% if status.media %}
+                <br><img style="max-width: 100%;max-height:700px;" src="{{ status.media[0].media_url }}" class="img-fluid" alt="Responsive image">
+            {% endif %}
+        </p>
     {% endfor %}
 
     <p>
