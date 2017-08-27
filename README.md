@@ -12,7 +12,7 @@ Simple Flask web app, which integrates a search string for geolocalization and d
     * `consumer_secret = ''`
     * `access_token_key = ''`
     * `access_token_secret = ''`
-    * `GOOGLEMAPS_KEY = ''`
+    * `GOOGLEMAPS_KEY = ''` # [get here](https://developers.google.com/maps/documentation/javascript/get-api-key)
 * Run `python main.py`
 
 ## Features
