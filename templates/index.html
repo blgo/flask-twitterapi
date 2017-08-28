@@ -3,7 +3,13 @@
 
     <h1> Tweet collecting and visualisation app </h1>
 
-    <p>{{ sndmap.html }}</p>
+    <p>
+    <!-- Do not render map if markers were not passed -->
+    {% if sndmap.markers %}
+        {{ sndmap.html }}
+        {{ sndmap.js }}
+    {% endif %}
+    </p>
 
     {% for status in twitts.statuses %}
          <p>
