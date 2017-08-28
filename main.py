@@ -1,6 +1,8 @@
 from flask import Flask, session, redirect, url_for, escape, request
 from flask import render_template
 
+import dotenv
+
 from twitterapi.gettwitts import *
 from twitterapi.importcsv import *
 from twitterapi.geolocation import * 
@@ -10,7 +12,7 @@ from flask_googlemaps import Map
      
 app = Flask(__name__)
 
-app.config['GOOGLEMAPS_KEY'] = "AIzaSyDytwPN4A0o6hkgTvaVyViBFeAkJbHYdDQ"
+app.config['GOOGLEMAPS_KEY'] = dotenv.get('GOOGLEMAPS_KEY')
 GoogleMaps(app)
 
 @app.route("/", methods=['GET', 'POST'])
@@ -49,11 +51,11 @@ def index():
             return render_template("error.html", error=str(error))
     else:
         sndmap = Map(
-                identifier="sndmap",
-                lat=0,
-                lng=0,
-                style="height:300px;width:90%;margin:0;",
-                zoom=3,
+            identifier="sndmap",
+            lat=0,
+            lng=0,
+            style="height:300px;width:90%;margin:0;",
+            zoom=3,
         )
     return render_template("index.html", twitts=twitts, sndmap=sndmap)
 
