@@ -1,18 +1,18 @@
 from flask import Flask, session, redirect, url_for, escape, request
 from flask import render_template
 
-import dotenv
-
 from twitterapi.gettwitts import *
 from twitterapi.importcsv import *
 from twitterapi.geolocation import * 
 
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
+
+from os import getenv
      
 app = Flask(__name__)
 
-app.config['GOOGLEMAPS_KEY'] = dotenv.get('GOOGLEMAPS_KEY')
+app.config['GOOGLEMAPS_KEY'] = os.getenv('GOOGLEMAPS_KEY')
 GoogleMaps(app)
 
 @app.route("/", methods=['GET', 'POST'])

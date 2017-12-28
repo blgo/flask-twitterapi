@@ -1,20 +1,19 @@
 import twitter
-import dotenv
+import os
 
 class Twitts(object):
 
     def __init__ (self):
-        dotenv.load()
         self.api = None
         self.statuses = None
 
     def authenticate(self):
-        self.api = twitter.Api(consumer_key=dotenv.get('consumer_key'),
-                    consumer_secret=dotenv.get('consumer_secret'),
-                    access_token_key=dotenv.get('access_token_key'),
-                    access_token_secret=dotenv.get('access_token_secret')
+        self.api = twitter.Api(consumer_key=os.getenv('consumer_key'),
+                    consumer_secret=os.getenv('consumer_secret'),
+                    access_token_key=os.getenv('access_token_key'),
+                    access_token_secret=os.getenv('access_token_secret')
                     )
 
     def get_twitts(self):
-        twitteruser = dotenv.get('twitteruser')
+        twitteruser = os.getenv('twitteruser')
         self.statuses = self.api.GetUserTimeline(screen_name=twitteruser, count=10)
