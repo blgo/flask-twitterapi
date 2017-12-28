@@ -1,4 +1,0 @@
-python-twitter 
-python-env 
-Flask-GoogleMaps
-flask
