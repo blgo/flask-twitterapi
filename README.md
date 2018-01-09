@@ -22,10 +22,14 @@ Simple Flask web app, which integrates a search string for geolocalization and d
 
 ## Docker image
 
-### Build Docker image
+### Build or Download Docker image
 
 `docker build . -t flask-twitterapi:latest`
 
+OR
+
+`docker pull blgo/flask-twitterapi:latest` 
+
 ### Run Docker image
 
-`docker run --rm -p 80:80 flask-twitterapi:latest`
+`docker run --rm -v ./.env:/app/.env -p 80:80 flask-twitterapi:latest`
