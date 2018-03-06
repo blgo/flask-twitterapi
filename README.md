@@ -5,7 +5,7 @@ Simple Flask web app, which integrates a search string for geolocalization and d
 ## Setup
 
 * Compatible with Python3.6
-* Install requerimets on requirements.txt
+* Install requirimets: `$ pip -r requirements/base.txt`
 * Pupulate your .env file with the following variables
     * `twitteruser = ''` # Twitter user from which we want to get twitts: "screen_name"
     * `consumer_key = ''` # go [here](https://apps.twitter.com/app/new) and create your twitter app
