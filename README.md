@@ -37,11 +37,18 @@ OR
 
 
 ### TODO
-* Optimise country search, analyse performance using Kcachegrind
+* Optimise country search, analyse performance using Qcachegrind
+* Make util fuction for analysing performance based on:
+`python -m cProfile -o profile_data.pyprof tests/gettwitts_tests.py`
+`python -m pyprof2calltree -i profile_data.pyprof -k`
+&&
+https://gitlab.com/blgo/learn-more-python-the-hard-way/blob/master/ex6-find/find.py comand line arguments parser.
 * Configuration management: http://flask.pocoo.org/docs/0.12/config/
-    * fix unittests
+    * fix unittests debugging (enviroment variables inyection does not work)
     * Amend README accordingly
+* Create .env and zappa_setting example files
 * Test Docker image, amend Dockerhub README
 * Add https URLs for Twitter images
 * Autodeploy to AWS LAMBDA using Travis only for master
- 
+* Sanitaze dependencies
+* Limit Zappa IAM user and roles privileges

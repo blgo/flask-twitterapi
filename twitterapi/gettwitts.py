@@ -16,4 +16,4 @@ class Twitts(object):
 
     def get_twitts(self):
         twitteruser = os.getenv('twitteruser')
-        self.statuses = self.api.GetUserTimeline(screen_name=twitteruser, count=10)
+        self.statuses = self.api.GetUserTimeline(screen_name=twitteruser, count=50)

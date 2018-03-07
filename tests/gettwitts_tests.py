@@ -10,3 +10,6 @@ def test_get_twitts():
     twit.authenticate()
     twit.get_twitts()
     assert_equal(twit.statuses[0].lang, "en")
+
+if __name__ == '__main__':
+    test_get_twitts()
