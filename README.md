@@ -50,6 +50,6 @@ https://gitlab.com/blgo/learn-more-python-the-hard-way/blob/master/ex6-find/find
 * ~~Create .env and zappa_setting example files~~
 * Test Docker image, amend Dockerhub README
 * Add https URLs for Twitter images
+* Sanitise dependencies
 * Autodeploy to AWS LAMBDA using Travis only for master
-* Sanitaze dependencies
 * Limit Zappa IAM user and roles privileges (edit example config file)
