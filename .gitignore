@@ -17,3 +17,9 @@ __pycache__/
 
 # other files
 *.pdf
+
+# zappa config file
+zappa_settings.json
+
+# performance analysis files
+*.pyprof
