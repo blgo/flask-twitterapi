@@ -8,12 +8,12 @@ Simple Flask web app, which integrates a search string for geolocalization and d
 * Compatible with Python3.6
 * Install requirimets: `$ pip -r requirements/base.txt`
 * Pupulate your .env file with the following variables
-    * `export twitteruser=''` # Twitter user from which we want to get twitts: "screen_name"
-    * `export consumer_key=''` # go [here](https://apps.twitter.com/app/new) and create your twitter app
-    * `export consumer_secret=''` # go to "manage keys and access tokens" to see your consumer_secret key
-    * `export access_token_key=''` # download, run [this script](https://github.com/bear/python-twitter/blob/master/get_access_token.py) and follow instructions
-    * `export access_token_secret=''` 
-    * `export GOOGLEMAPS_KEY=''` # [get here](https://developers.google.com/maps/documentation/javascript/get-api-key)
+    * `twitteruser=''` # Twitter user from which we want to get twitts: "screen_name"
+    * `consumer_key=''` # go [here](https://apps.twitter.com/app/new) and create your twitter app
+    * `consumer_secret=''` # go to "manage keys and access tokens" to see your consumer_secret key
+    * `access_token_key=''` # download, run [this script](https://github.com/bear/python-twitter/blob/master/get_access_token.py) and follow instructions
+    * `access_token_secret=''` 
+    * `GOOGLEMAPS_KEY=''` # [get here](https://developers.google.com/maps/documentation/javascript/get-api-key)
 * Run `. .env; python main.py`
 
 ## Features
