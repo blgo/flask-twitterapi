@@ -12,6 +12,8 @@ from os import getenv
 app = Flask(__name__)
 
 app.config['GOOGLEMAPS_KEY'] = os.getenv('GOOGLEMAPS_KEY')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
 GoogleMaps(app)
 
 @app.route("/", methods=['GET', 'POST'])
@@ -58,8 +60,5 @@ def index():
     return render_template("index.html", twitts=twitts, sndmap=sndmap)
 
 
-app.secret_key = '1Ai9Mk1fXnkN3VN1yTw445QZDokF4b'
-
-
 if __name__ == "__main__":
-     app.run()
+    app.run()
