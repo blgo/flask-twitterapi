@@ -1,3 +1,4 @@
+Live demo: https://ppw2v8syjg.execute-api.eu-west-1.amazonaws.com/dev
 # flask-twitterapi
 
 Simple Flask web app, which integrates a search string for geolocalization and display twitts on top of GoogleMaps.
@@ -33,3 +34,14 @@ OR
 ### Run Docker image
 
 `docker run --rm -v ./.env:/app/.env -p 80:80 flask-twitterapi:latest`
+
+
+### TODO
+* Optimise country search, analyse performance using Kcachegrind
+* Configuration management: http://flask.pocoo.org/docs/0.12/config/
+    * fix unittests
+    * Amend README accordingly
+* Test Docker image, amend Dockerhub README
+* Add https URLs for Twitter images
+* Autodeploy to AWS LAMBDA using Travis only for master
+ 
