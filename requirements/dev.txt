@@ -1,0 +1,4 @@
+-r base.txt
+pylint==1.8.2
+nose==1.3.7
+pyprof2calltree==1.4.3

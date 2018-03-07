@@ -1,2 +1,2 @@
 -r base.txt
-zappa
+zappa==0.45.1
