@@ -14,6 +14,13 @@ __pycache__/
 
 # environment variables
 .env
+env
 
 # other files
 *.pdf
+
+# zappa config file
+zappa_settings.json
+
+# performance analysis files
+*.pyprof

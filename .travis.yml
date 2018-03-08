@@ -1,10 +1,21 @@
 language: python
 python:
   - "3.6"
-# command to install dependencies
 install:
-  - pip install -r requirements.txt
-  - pip install nose
-# command to run tests
+  - pip install -r requirements/dev.txt
 script:
   - nosetests
+# After tests pass, build docker image and update AWS deploymenr for live demo
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+
+      docker build . -t flask-twitterapi:latest;
+      docker run --rm --name flask-twitterapi-run -p 80:80 -d flask-twitterapi:latest;
+      docker ps -a;
+      docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+      docker push blgo/flask-twitterapi;
+
+      pip install -r requirements/zappa.txt;
+
+      aws s3 cp s3://zappa-flask-twitterapi-keys/zappa_settings.json  ./;
+      zappa update dev; fi

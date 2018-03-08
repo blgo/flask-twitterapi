@@ -14,9 +14,19 @@ __pycache__/
 .noseids
 
 # environment variables
-#.env # Commented out for testing Docker image
+.env # This need to be shared using Docker volumes
+env
+
+# Hidden files
+.*
+
+# Unittests
+tests
 
 # other files
 *.pdf
 Dockerfile
 README.md
+zappa_settings.json
+config_examples
+get_access_token.py
