@@ -6,6 +6,21 @@
         "project_name": "flask-twitterapi",
         "runtime": "python3.6",
         "s3_bucket": "zappa-******",
+        "exclude": [
+            ".env",
+            ".dockerignore",
+            "Dockerfile",
+            ".git/*",
+            ".venv/*",
+            ".gitignore",
+            ".python-version",
+            "LICENSE",
+            "README.md",
+            "requirements.txt",
+            "zappa_settings.json",
+        ],
+        "keep_warm": false,
+        "timeout_seconds": 10,
         "environment_variables": {
             // See README for links to generate your keys
             "twitteruser" : "",
