@@ -7,7 +7,7 @@ script:
   - nosetests
 # After tests pass, build docker image and update AWS deploymenr for live demo
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
       docker build . -t flask-twitterapi:latest;
       docker run --rm --name flask-twitterapi-run -p 80:80 -d flask-twitterapi:latest;
